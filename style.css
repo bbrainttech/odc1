@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Andika:wght@400;700&family=Inter:wght@200;400;600;800;900&family=Oswald:wght@300;500;600&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Raleway:wght@300;500;600;700&family=Roboto+Flex:wght@300;500;600;700;800&display=swap");
 *,*::before,*::after{
     box-sizing: border-box;
 }
 body{
     margin: 0;
+    font-family: 'Andika', sans-serif;
     padding: 0;
 }
