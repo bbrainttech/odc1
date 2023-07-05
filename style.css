@@ -9,8 +9,10 @@
 
 }
 
+
 :root {
     scroll-behavior: smooth;
+    --all-pad: 0 7em ;
     --mainColor: #eb5d1e;
     --primaryColor: #fef8f5;
     --headingColor: #4e4039;
@@ -32,7 +34,7 @@ body {
 }
 
 nav {
-    padding: 0 7em;
+    padding:var(--all-pad);
     display: flex;
     align-items: center;
     height: 4.5em;
@@ -147,17 +149,17 @@ ul li.to_drop:hover>ul.drop-deep {
 }
 
 header {
-    padding: 0 7em;
+    padding: var(--all-pad);
     background-color: var(--primaryColor);
     display: flex;
     height: 70vh;
+    gap: 2em;
     align-items: center;
     border-bottom: 1.5px solid #eb5c1e22;
 }
 
 header>div {
     max-width: 50%;
-    /* border: solid red; */
 }
 
 header .lf {
@@ -248,6 +250,12 @@ main>section:nth-child(even) {
 #aboutUs>div {
     max-width: 50%;
 }
+#aboutUs .lf{
+    flex-shrink: 2;
+}
+#aboutUs .lf img {
+    width: 86.5%;
+}
 #aboutUs .rt h2{
     color: var(--headingColor);
     line-height: 1.2;
@@ -261,6 +269,7 @@ main>section:nth-child(even) {
 #aboutUs .rt .flx {
     display: flex;
     gap: 1em;
+    place-content: center;
 }
 
 #aboutUs .rt .flx>div i {
@@ -270,7 +279,7 @@ main>section:nth-child(even) {
 
 #aboutUs .rt .flx>div h3 {
     color: #7a6960;
-    font-size: 1.3em;
+    font-size: 1.35em;
 }
 
 #aboutUs .rt .flx>div p {
@@ -278,24 +287,21 @@ main>section:nth-child(even) {
     font-size: .9em;
     margin-top: .5em;
 }
-
 .m_p {
-    font: .9em;
+    font-size: .98em;
+    color: #5a6570;
 }
 
-#aboutUs .lf img {
-    width: 33em;
-}
 
 #services .ser {
-    border: solid green;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(19em, 1fr));
+    gap: 1em;
     padding: 5em 0;
+    justify-content: center;
 }
 #services .ser>div{
-    width: 19em;
+    /* max-width: 20em; */
     background: #fff;
     padding: 1em;
     box-shadow: 0 0 1.98em #7f89a140;
@@ -305,16 +311,23 @@ main>section:nth-child(even) {
     text-align: center;
     display: flex;
     flex-direction: column;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 #services .ser>div i{
-    font-size: 2em;
+    font-size: 2.5em;
+    color: var(--mainColor);
+}
+#services .ser>div h4{
+    margin: 1em 0;
+    font-size: 1.1em;
 }
 @media only screen and (max-width : 1170px) {
-    body {
-        border: solid red;
+    :root{
+        --all-pad : 0 3em;
     }
-
+    main>section {
+        padding: 3em;
+    }
     .menu-btn {
         display: block;
     }
@@ -322,7 +335,6 @@ main>section:nth-child(even) {
     .r-nav {
         display: none;
     }
-
     header>div {
         min-width: 100%;
     }
@@ -338,9 +350,26 @@ main>section:nth-child(even) {
     }
 
     header {
+        padding: 3em;
         height: auto;
-        width: 100%;
-        padding: 6em;
         flex-direction: column-reverse;
+    }
+    #aboutUs {
+        display: block;
+    }
+    #aboutUs>div{
+        max-width: 100%;
+    }
+    #aboutUs .rt{
+        margin-top: 2em;
+    }
+}
+@media only screen and (max-width : 630px){
+    :root{--all-pad : 0 1em;}
+    .flx{
+        flex-direction: column;
+    }
+    header{
+        padding: 3em 1em;
     }
 }
