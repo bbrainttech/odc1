@@ -1,8 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Andika:wght@400;700&family=Inter:wght@200;400;600;800;900&family=Oswald:wght@300;500;600&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Raleway:wght@300;500;600;700&family=Roboto+Flex:wght@300;500;600;700;800&display=swap");
+
 *,
 *::before,
 *::after {
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
 }
 
 :root {
@@ -23,9 +27,8 @@ li {
 }
 
 body {
-    margin: 0;
     font-family: 'Andika', sans-serif;
-    padding: 0;
+
 }
 
 nav {
@@ -110,24 +113,36 @@ ul li.to_drop:hover>ul {
     top: 2.2em;
     opacity: 1;
 }
-ul li.to_drop:hover>ul.drop-deep {left: 10.4em;top: 0;} 
+
+ul li.to_drop:hover>ul.drop-deep {
+    left: 10.4em;
+    top: 0;
+}
 
 .nav-btn button {
     border-radius: 20px !important;
 }
-.menu-btn{
+
+.menu-btn {
     display: none;
 }
-.menu-btn button{
+
+.menu-btn button {
     border: 0;
     font-size: 2em;
     background-color: var(--trns);
 }
-.menu-btn button i.bi-x{display: block;transition: .3s cubic-bezier(0.68, -0.55, 0.265, 1.55);}
-.menu-btn button i.bi-x{
+
+.menu-btn button i.bi-x {
+    display: block;
+    transition: .3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.menu-btn button i.bi-x {
     scale: 1.4;
 }
-.menu-btn.show{
+
+.menu-btn.show {
     display: block;
 }
 
@@ -142,6 +157,11 @@ header {
 
 header>div {
     max-width: 50%;
+    /* border: solid red; */
+}
+
+header .lf {
+    flex-shrink: 2;
 }
 
 header .lf h1 {
@@ -152,11 +172,11 @@ header .lf h1 {
 }
 
 header .lf p {
-    font-size: clamp(1em, .5em + 2.5vw, 1.35em);
+    font-size: clamp(.85em, .4em + 2.5vw, 1.35em);
     line-height: 1.3;
     color: #a08f86;
     font-weight: 500;
-    margin-top: -.5em;
+    margin: 1em 0;
 }
 
 header .lf .gs2 button,
@@ -177,10 +197,9 @@ header .lf .gs2 button:hover {
     opacity: .8;
 }
 
-header .rt {}
-
 header .rt img {
-    height: 27em;
+    max-width: 100%;
+    width: 39em;
     animation: moveUPDown 2.15s ease-in-out alternate-reverse infinite;
 }
 
@@ -190,6 +209,138 @@ header .rt img {
     }
 }
 
+main>section {
+    padding: 3em 7em;
+}
+
+main>section :is(.l_h, .m_h) {
+    text-align: center;
+}
+
 main>section:nth-child(even) {
     background-color: var(--primaryColor);
+}
+
+.l_h {
+    color: var(--headingLight);
+}
+
+.m_h {
+    color: var(--headingColor);
+    line-height: 1.2;
+    position: relative;
+    font-size: clamp(1.5em, 1em + 2.5vw, 2.2em);
+}
+.m_h::after{
+    content: '';
+    height: .05em;
+    width: 1.8em;
+    left: calc(50% - .9em);
+    background: var(--mainColor);
+    position: absolute;
+    bottom: -.5em;
+}
+#aboutUs {
+    display: flex;
+    justify-content: space-between;
+}
+
+#aboutUs>div {
+    max-width: 50%;
+}
+#aboutUs .rt h2{
+    color: var(--headingColor);
+    line-height: 1.2;
+    font-size: clamp(1.5em, 1em + 2.5vw, 2.2em);
+}
+#aboutUs .rt p{
+    margin: 1em 0;
+    color: #5a6570;
+}
+
+#aboutUs .rt .flx {
+    display: flex;
+    gap: 1em;
+}
+
+#aboutUs .rt .flx>div i {
+    color: var(--mainColor);
+    font-size: 2.3em;
+}
+
+#aboutUs .rt .flx>div h3 {
+    color: #7a6960;
+    font-size: 1.3em;
+}
+
+#aboutUs .rt .flx>div p {
+    line-height: 1.3;
+    font-size: .9em;
+    margin-top: .5em;
+}
+
+.m_p {
+    font: .9em;
+}
+
+#aboutUs .lf img {
+    width: 33em;
+}
+
+#services .ser {
+    border: solid green;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 5em 0;
+}
+#services .ser>div{
+    width: 19em;
+    background: #fff;
+    padding: 1em;
+    box-shadow: 0 0 1.98em #7f89a140;
+    height: 15em;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+#services .ser>div i{
+    font-size: 2em;
+}
+@media only screen and (max-width : 1170px) {
+    body {
+        border: solid red;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .r-nav {
+        display: none;
+    }
+
+    header>div {
+        min-width: 100%;
+    }
+
+    header .rt {
+        display: flex;
+        justify-content: center;
+    }
+
+    header .rt img {
+        width: 25em;
+        animation-play-state: paused;
+    }
+
+    header {
+        height: auto;
+        width: 100%;
+        padding: 6em;
+        flex-direction: column-reverse;
+    }
 }
