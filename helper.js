@@ -4,7 +4,7 @@ const q = (x, y = false) => {
 },
 
     // Handles event listeners
-    onEvent = (type, el, listener, all = false) => {
+    listen = (type, el, listener, all = false) => {
         if (el) {
             (all) ? el.forEach(e => e.addEventListener(type, listener)) :
                 el.addEventListener(type, listener);

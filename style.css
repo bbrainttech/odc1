@@ -59,7 +59,7 @@ nav {
 
 .links>ul {
     display: flex;
-    gap: 2em;
+    gap: 1.8em;
 }
 
 .links ul li {
@@ -70,6 +70,7 @@ nav {
     white-space: nowrap;
     transition: .3s;
     text-transform: capitalize;
+    font-size: .94em;
     color: #4e4039;
 }
 
@@ -109,7 +110,7 @@ ul li.to_drop:hover>ul {
     top: 2.2em;
     opacity: 1;
 }
-ul li.to_drop:hover>ul.drop-deep {left: 100%;top: 0;} 
+ul li.to_drop:hover>ul.drop-deep {left: 10.4em;top: 0;} 
 
 .nav-btn button {
     border-radius: 20px !important;
