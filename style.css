@@ -43,6 +43,7 @@ nav {
     top: 0;
     z-index: 2;
     justify-content: space-between;
+    
     box-shadow: 0 6px 7px #00000013;
 }
 
