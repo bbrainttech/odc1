@@ -1,14 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Andika:wght@400;700&family=Inter:wght@200;400;600;800;900&family=Oswald:wght@300;500;600&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Raleway:wght@300;500;600;700&family=Roboto+Flex:wght@300;500;600;700;800&display=swap");
-
-*,
-*::before,
+@import url('https://fonts.googleapis.com/css2?family=Andika:wght@400;700&family=Raleway:wght@100;200&display=swap');
+*,*::before,
 *::after {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 
 }
-
 
 :root {
     scroll-behavior: smooth;
@@ -17,6 +14,7 @@
     --primaryColor: #fef8f5;
     --headingColor: #4e4039;
     --headingLight: #c2b7b1;
+    --trns : transparent;
 }
 
 a {
@@ -30,7 +28,6 @@ li {
 
 body {
     font-family: 'Andika', sans-serif;
-
 }
 
 nav {
@@ -49,7 +46,7 @@ nav {
 
 .logo a {
     color: #544a44;
-    font-family: 'Raleway Light', sans-serif;
+    font-family: 'Raleway',sans-serif;
     font-size: 1.8em;
     letter-spacing: 2.5px;
     cursor: pointer;
@@ -93,7 +90,7 @@ nav {
 ul.drop {
     background: #fff;
     position: absolute;
-    gap: .8em;
+    gap: 1em;
     top: 5em;
     display: grid;
     width: auto;
@@ -203,7 +200,7 @@ header .lf .gs2 button:hover {
 header .rt img {
     max-width: 100%;
     width: 39em;
-    animation: moveUPDown 2.15s ease-in-out alternate-reverse infinite;
+    animation: moveUPDown 2.15s ease-in-out alternate infinite;
 }
 
 @keyframes moveUPDown {
@@ -302,10 +299,10 @@ main>section:nth-child(even) {
     justify-content: center;
 }
 #services .ser>div{
-    /* max-width: 20em; */
+    transition: .45s ease;
     background: #fff;
     padding: 1em;
-    box-shadow: 0 0 1.98em #7f89a140;
+    box-shadow: 0 0 1.98em #959aa540;
     height: 15em;
     justify-content: center;
     align-items: center;
@@ -313,6 +310,7 @@ main>section:nth-child(even) {
     display: flex;
     flex-direction: column;
     border-radius: 15px;
+    border-bottom: .18em solid #fff;
 }
 #services .ser>div i{
     font-size: 2.5em;
@@ -321,6 +319,63 @@ main>section:nth-child(even) {
 #services .ser>div h4{
     margin: 1em 0;
     font-size: 1.1em;
+}
+#services .ser>div:hover{
+    translate: 0 -.3em;
+    border-color: var(--mainColor);
+}
+#portfolio .filter-bock{
+    padding-top: 4em;
+    display: flex;
+    gap: 1.5em;
+    justify-content: center;
+}
+#portfolio .filter-bock span{
+    cursor: pointer;
+    transition: .3s ease;
+}
+#portfolio .filter-bock span:is(:hover, .act){
+    color: var(--mainColor);
+}
+
+#faq ul{
+    padding-top: 2em;
+}
+#faq ul li{
+    transition: .5s ease;
+    padding: 1.17em 0;
+    border-bottom: 1px solid #e5e2e1;
+}
+#faq ul li .que{
+    font-size: 1.13em;
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+}
+#faq ul li .que i{
+    margin-right: .5em;
+}
+#faq ul li .que.act i{
+    rotate: 180deg;
+}
+#faq ul li .que:is(.act,:hover){
+    color: var(--mainColor);
+}
+#faq ul li .ans{
+    display: grid;
+    transition: .5s ease-in-out;
+    position: relative;
+    grid-template-rows: 0fr;
+}
+#faq ul li .ans p{
+    overflow: hidden;
+    font-size: .9em;
+    transition: .35s linear;
+    padding-top: .7em;
+    margin-left: 1.98em;
+}
+#faq ul li .que.act ~ .ans{
+  grid-template-rows: 1fr;
 }
 @media only screen and (max-width : 1170px) {
     :root{
@@ -367,10 +422,30 @@ main>section:nth-child(even) {
 }
 @media only screen and (max-width : 630px){
     :root{--all-pad : 0 1em;}
+    main>section{padding: 3em 1em;}
     .flx{
         flex-direction: column;
     }
     header{
         padding: 3em 1em;
     }
+}
+.to_top{
+    position: fixed;
+    right: .57em;
+    bottom: .57em;
+    height: 1.77em;
+    width: 1.77em;
+    background: var(--mainColor);
+    border-radius: 5px;
+    transition: .3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    border: solid;
+    font-size: 1.5em;
+}
+.to_top:hover{
+   opacity: .8;
 }
