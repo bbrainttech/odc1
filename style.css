@@ -219,7 +219,7 @@ header .rt img {
     }
 }
 
-main>section {
+main>section, footer .box {
     padding: 3em 7em;
 }
 
@@ -756,6 +756,139 @@ main>section:nth-child(even) {
     opacity: .8;
 }
 
+footer{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+footer .top{
+    display: grid;
+    text-align: center;
+    background-color: var(--primaryColor);
+}
+footer .top h2{
+    padding: 1em 0;
+    color: var(--headingColor);
+}
+footer .top p{
+    margin-top: -1.2em;
+    padding: 1em;
+    color: #3f342e;
+}
+footer .newl{
+    justify-content: center;
+    display: flex;
+    margin: 1em 0;
+}
+footer .newl>div{
+    height: 2.9em;
+    align-items: center;
+    padding-left:.35em;
+    border-radius: 6px;
+    box-shadow: 0 0 .8em #00000029;
+    display: flex;
+    background: #fff;
+    width: 55%;
+    justify-content: space-between;
+}
+footer .newl>div input{
+    border: 0;
+    border-radius: 4px;
+    padding: .6em;
+    width: 100%;
+    max-height: 2.5em;
+    margin-right: -1em;
+}
+footer .newl>div button{
+    color: #fff;
+    border: 0;
+    padding: .7em 1.2em;
+    font-size: 1.05em;
+    height: 100%;
+    transition: .3s ease;
+    border-radius: 4px;
+    background-color: var(--mainColor);
+}
+footer .newl button:hover{
+    background-color: #b54a1c;
+}
+
+footer .btm{
+    display: grid;
+    gap: 1em;
+    grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
+}
+
+footer .btm>div h1{
+    font-family: 'Raleway';
+    font-size: 1.6em;
+    margin-bottom: .5em;
+    letter-spacing: 1.4px;
+}
+footer .btm>div p{
+    font-size: .8em;
+    color: #544c47;
+    padding: .2em 0;
+}
+footer .btm>div .address {margin-top: 1em;}
+footer .btm>div h2{
+    font-size: 1em;
+}
+footer .btm>div li{
+    font-size: .85em;
+    margin: 1em 0;
+}
+footer .btm>div li a{
+    transition: .3s ease;
+    color: #544c47;    
+}
+footer .btm>div li i{
+    color: var(--mainColor);
+    font-size: .8em;
+    margin-right: .3em
+}
+footer .btm>div li:hover a{
+    color: var(--mainColor);
+}
+footer .btm>div:last-child p{
+    margin-top: 1em;
+}
+footer .foot_media{
+    display: flex;
+    gap: .7em;
+    margin-top: 1em;
+}
+footer .foot_media i{
+    border-radius: 50%;
+    transition: .3s ease;
+    height: 2.2em;
+    width: 2.2em;display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;background: var(--mainColor);
+}
+footer .foot_media i:hover{
+    opacity: .8;
+}
+footer .btm>div:last-child p{
+    margin-top: 1em;
+}
+footer .last {
+    padding: 0;
+    margin: 0;
+    background-color: var(--primaryColor);
+}
+footer .last .box{
+    display: flex;
+    padding-top: 1.5em;
+    padding-bottom: 2em;
+    justify-content: space-between;
+}
+footer .last .box p{
+    font-size: .9em;
+}
+footer .last .box p span{
+    color: var(--mainColor);
+}
 @media only screen and (max-width : 1170px) {
     :root {
         --all-pad: 0 3em;
@@ -764,12 +897,15 @@ main>section:nth-child(even) {
     #contact .writeUs .lf {
         width: 40%;
     }
+    footer .newl>div{
+        width: 80%;
+    }
 
     #contact .writeUs .rt form>div:is(:first-child, :nth-child(2)) {
         grid-column: span 2;
     }
 
-    main>section {
+    main>section, footer .box{
         padding: 3em;
     }
 
@@ -824,6 +960,9 @@ main>section:nth-child(even) {
         min-width: 100%;
     }
 
+    footer .newl>div{
+        width: 100%;
+    }
 }
 
 @media only screen and (max-width : 630px) {
@@ -831,7 +970,7 @@ main>section:nth-child(even) {
         --all-pad: 0 1em;
     }
 
-    main>section {
+    main>section, footer .box {
         padding: 3em 1em;
     }
 
