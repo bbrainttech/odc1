@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Andika:wght@400;700&family=Raleway:wght@100;200&display=swap');
+@font-face {font-family:"Raleway"; src:url("/assets/Raleway-VariableFont_wght.woff") format("woff");}
+@font-face {font-family:"Andika"; src:url("/assets/Andika-Regular.woff") format("woff");}
 
 *,
 *::before,
